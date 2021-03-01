@@ -148,8 +148,16 @@ static void install(jsi::Runtime & jsiRuntime)
        lineFragmentUsedRectForGlyphAtIndex:index effectiveRange:&lineRange withoutAdditionalLayout:YES];
       index = NSMaxRange(lineRange);
     }
+    
+    CGFloat width = MIN(RCTCeilPixelValue(size.width + 0.001), maxSize.width);
+    
+    NSDictionary *result = [[NSDictionary alloc] initWithObjectsAndKeys: @(width), @"width", @(lineCount), @"lineCount", nil];
+    
+    auto ret = convertNSDictionaryToJSIObject(runtime, result);
 
-    return convertNSNumberToJSINumber(runtime, [NSNumber numberWithInt:lineCount]);
+    return ret;
+
+//    return convertNSNumberToJSINumber(runtime, [NSNumber numberWithInt:lineCount]);
   });
 
   jsiRuntime.global().setProperty(jsiRuntime, "measureText", std::move(measureText));

@@ -7,7 +7,10 @@ const measureText = {
     width: number;
     text: string;
     fontSize: number;
-  }) => number,
+  }) => {
+    lineCount: number;
+    width: number;
+  },
 };
 
 export default measureText;
