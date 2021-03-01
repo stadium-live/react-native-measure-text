@@ -3,7 +3,7 @@ require "json"
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
-  s.name         = "react-native-mmkv"
+  s.name         = "react-native-measure-text"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
@@ -26,6 +26,5 @@ Pod::Spec.new do |s|
     'ios/**/*.h'
   ]
 
-  s.dependency "MMKV"
   s.dependency "React-Core"
 end

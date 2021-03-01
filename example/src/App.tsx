@@ -24,36 +24,34 @@ export default function App() {
     }
   }, [key, text]);
   const read = React.useCallback(() => {
-    if (key == null || key.length < 1) {
-      Alert.alert('Empty key!', 'Enter a key first.');
-      return;
-    }
-    try {
-      console.log('getting...');
-      const value = MMKV.getString(key);
-      console.log('got:', value);
-      Alert.alert('Result', `"${key}" = "${value}"`);
-    } catch (e) {
-      console.error('Error:', e);
-      Alert.alert('Failed to get value for key "test"!', JSON.stringify(e));
-    }
+    // if (key == null || key.length < 1) {
+    //   Alert.alert('Empty key!', 'Enter a key first.');
+    //   return;
+    // }
+    // try {
+    //   console.log('getting...');
+    //   const value = MMKV.getString(key);
+    //   console.log('got:', value);
+    //   Alert.alert('Result', `"${key}" = "${value}"`);
+    // } catch (e) {
+    //   console.error('Error:', e);
+    //   Alert.alert('Failed to get value for key "test"!', JSON.stringify(e));
+    // }
   }, [key]);
 
   React.useEffect(() => {
-    try {
-      console.log('getting all keys...');
-      const _keys = MMKV.getAllKeys();
-      setKeys(_keys);
-      console.log('MMKV keys:', _keys);
-    } catch (e) {
-      console.error('Error:', e);
-    }
+    // try {
+    //   console.log('getting all keys...');
+    //   const _keys = MMKV.getAllKeys();
+    //   setKeys(_keys);
+    //   console.log('MMKV keys:', _keys);
+    // } catch (e) {
+    //   console.error('Error:', e);
+    // }
   }, []);
 
   React.useEffect(() => {
-    setTimeout(async () => {
-      await benchmarkAgainstAsyncStorage();
-    }, 5000);
+    benchmarkAgainstAsyncStorage();
   }, []);
 
   return (
@@ -65,7 +63,9 @@ export default function App() {
           placeholder="Key"
           style={styles.textInput}
           value={key}
-          onChangeText={setKey}
+          onChangeText={() => {
+            // benchmarkAgainstAsyncStorage();
+          }}
         />
       </View>
       <View style={styles.row}>
