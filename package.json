@@ -1,5 +1,5 @@
 {
-  "name": "react-native-mmkv",
+  "name": "@paulxuca/react-native-measure-text",
   "version": "1.0.0",
   "description": "An efficient, small mobile key-value storage framework developed by WeChat. Works on Android and iOS.",
   "main": "lib/commonjs/index",
@@ -19,7 +19,7 @@
     "ios/**/*.mm",
     "ios/**/*.cpp",
     "ios/Mmkv.xcodeproj/project.pbxproj",
-    "react-native-mmkv.podspec",
+    "react-native-measure-text.podspec",
     "README.md"
   ],
   "scripts": {
@@ -39,7 +39,7 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/mrousavy/react-native-mmkv",
+  "repository": "https://github.com/stadium-live/react-native-measure-text",
   "author": "Marc Rousavy <marcrousavy@hotmail.com> (https://github.com/mrousavy)",
   "license": "MIT",
   "bugs": {
@@ -64,7 +64,7 @@
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-builder-bob": "^0.17.1",
-    "release-it": "^14.2.2",
+    "release-it": "^14.4.1",
     "typescript": "^4.1.3"
   },
   "peerDependencies": {
