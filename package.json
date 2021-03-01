@@ -126,7 +126,6 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "aar",
       "commonjs",
       "module",
       [
